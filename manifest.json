@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "SRT Macro",
+  "description": "SRT 자동 예약 매크로 로그인 여부체크, 결제페이지로 넘어갈 때 텔레그램 봇이 알려줌(텔레그램필요, 필요하면 대화방초대해드림)",
+  "version": "1.2",
+  "permissions": [
+    "https://etk.srail.kr/"
+  ],
+  "icons": {
+      "128": "images/icon128.png"
+  },
+  "content_scripts": [ {
+    "all_frames": true,
+    "js": ["jquery-1.11.3.min.js", "content.js"],
+    "matches": ["https://etk.srail.kr/*"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "page": "background.html"
+  },
+  "web_accessible_resources": [
+    "images/btn_start.png", "images/btn_stop.png", "assets/tada.mp3"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}
